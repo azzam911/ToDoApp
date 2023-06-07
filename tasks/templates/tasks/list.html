@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+
+    <div class="container">
+        <div class="create-form">
+            <form action="/" method="POST" class="list-form">
+                {% csrf_token %}
+                {{forms.title}}<br>
+                <input type="submit" value="Create Task"  class="btn btn-primary">
+            </form>
+        </div>
+        
+
+        <div class="row">
+            {% for task in tasks %}
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <p class="card-text">
+                            {% if task.complete == True %}
+                            <strike>{{task.title}}</strike>
+                            {% else %}
+                                {{task.title}}
+                            {% endif %}
+                        </p>
+                        <div class="buttons">
+                            <a href="{% url 'tasks:update' task.id %}" class="btn btn-primary">Update</a>
+                            <a href="{% url 'tasks:delete' task.id %}" class="btn btn-danger">Delete</a>
+                        </div>
+                        
+                    </div>
+                </div>  
+            </div>
+            {% endfor %}
+        </div>
+        {% if count %}
+            <a href="{% url 'tasks:deleteall' %}" class="btn btn-danger delete-all">Delete All</a>
+        {% endif %}
+    </div>
+{% endblock content %}
+
+
+

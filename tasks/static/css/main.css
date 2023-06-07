@@ -1,0 +1,64 @@
+a {
+    text-decoration: none !important;
+}
+.container {
+    margin-top: 20px;
+}
+.create-form {
+    width: 100%;
+    text-align: center;
+}
+.list-form input {
+    margin: auto;
+}
+
+.list-form input[type = 'text'] {
+    background-color: #eee;
+    border: none;
+    width: 80%;
+    border-radius: 15px 0;
+    padding: 10px;
+    transition: .5s;
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.list-form input[type = 'text']:focus {
+    outline: none;
+    background-color: #858585;
+    border-radius: 0 15px;
+    color: #fff;
+}
+
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row {
+    margin: 30px 0;
+}
+.row>* {
+    margin-bottom: 20px;
+}
+
+.card {
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.delete-all {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 30px 0;
+    width: 200px;
+}
+
+label {
+    font-size: 20px;
+}
